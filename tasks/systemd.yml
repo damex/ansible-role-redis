@@ -1,0 +1,17 @@
+---
+- name: ensure systemd
+  block:
+    - name: ensure redis service is enabled
+      systemd:
+        name: "{{ redis_service_name }}"
+        enabled: true
+    - name: ensure redis service is started
+      systemd:
+        name: "{{ redis_service_name }}"
+        state: "started"
+    - name: ensure redis service is restarted
+      systemd:
+        name: "{{ redis_service_name }}"
+        state: "restarted"
+      when: redis_conf_file_state.changed
+  become: true

@@ -1,0 +1,10 @@
+---
+- name: ensure redis configuration
+  template:
+    src: "redis.conf.j2"
+    dest: "{{ redis_conf_file }}"
+    owner: "root"
+    group: "root"
+    mode: 0644
+  become: true
+  register: redis_conf_file_state

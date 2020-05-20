@@ -1,0 +1,4 @@
+# {{ ansible_managed }}
+
+daemonize {{ 'yes' if redis_daemonize else 'no' }}
+pidfile {{ redis_pidfile }}

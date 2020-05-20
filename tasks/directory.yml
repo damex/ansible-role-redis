@@ -1,0 +1,9 @@
+---
+- name: ensure redis directory
+  file:
+    name: "{{ redis_conf_dir }}"
+    state: directory
+    owner: "root"
+    group: "root"
+    mode: 0755
+  become: true

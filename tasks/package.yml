@@ -1,0 +1,9 @@
+---
+- name: ensure redis package
+  include_role:
+    name: "damex.package"
+  vars:
+    package_packages:
+      - name: "{{ redis_package_name }}"
+        version: "{{ redis_package_version }}"
+        state: "{{ redis_package_state }}"

@@ -6,7 +6,7 @@ loadmodule {{ loadmodule }}
 {% for bind in redis_bind %}
 bind {{ bind }}
 {% endfor %}
-protected-mode {{ 'yes' if redis_protected_mode else 'no }}
+protected-mode {{ 'yes' if redis_protected_mode else 'no' }}
 port {{ redis_port }}
 tcp-backlog {{ redis_tcp_backlog }}
 timeout {{ redis_timeout }}

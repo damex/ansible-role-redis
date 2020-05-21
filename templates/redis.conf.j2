@@ -1,5 +1,8 @@
 # {{ ansible_managed }}
 
+{% for bind in redis_bind %}
+bind {{ bind }}
+{% endfor %}
 daemonize {{ 'yes' if redis_daemonize else 'no' }}
 pidfile {{ redis_pidfile }}
 dir {{ redis_dir }}

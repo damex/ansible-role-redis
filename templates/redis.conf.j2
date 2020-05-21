@@ -1,8 +1,24 @@
 # {{ ansible_managed }}
 
+{% for loadmodule in redis_loadmodule %}
+loadmodule {{ loadmodule }}
+{% endfor %}
 {% for bind in redis_bind %}
 bind {{ bind }}
 {% endfor %}
+protected-mode {{ 'yes' if redis_protected_mode else 'no }}
+port {{ redis_port }}
+tcp-backlog {{ redis_tcp_backlog }}
+timeout {{ redis_timeout }}
+tcp-keepalive {{ redis_tcp_keepalive }}
 daemonize {{ 'yes' if redis_daemonize else 'no' }}
+supervised {{ redis_supervised }}
 pidfile {{ redis_pidfile }}
+loglevel {{ redis_loglevel }}
+logfile {{ redis_logfile }}
+syslog-enabled {{ 'yes' if redis_syslog_enabled else 'no' }}
+syslog-ident {{ redis_syslog_ident }}
+syslog-facility {{ redis_syslog_facility }}
+databases {{ redis_databases }}
+always-show-logo {{ 'yes' if redis_always_show_logo else 'no' }}
 dir {{ redis_dir }}

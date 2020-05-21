@@ -24,4 +24,12 @@ redis_syslog_ident: "redis"
 redis_syslog_facility: "local0"
 redis_databases: 16
 redis_always_show_logo: false
+redis_save:
+  - 900 1
+  - 300 10
+  - 60 10000
+redis_stop_writes_on_bgsave_error: true
+redis_rdbcompression: true
+redis_rdbchecksum: true
+redis_dbfilename: "dump.rdb"
 redis_dir: "/var/lib/redis"

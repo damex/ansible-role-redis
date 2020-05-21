@@ -3,8 +3,8 @@
   template:
     src: "redis.conf.j2"
     dest: "{{ redis_conf_file }}"
-    owner: "root"
-    group: "root"
-    mode: 0644
+    owner: "{{ redis_user }}"
+    group: "{{ redis_group }}"
+    mode: 0640
   become: true
   register: redis_conf_file_state

@@ -2,7 +2,7 @@
 - name: ensure redis
   block:
     - import_tasks: package.yml
-    - import_tasks: directory.yml
+    - import_tasks: directories.yml
     - import_tasks: redis.conf.yml
     - import_tasks: systemd.yml
   tags:

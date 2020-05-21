@@ -1,0 +1,18 @@
+---
+- name: ensure redis configuration directory
+  file:
+    name: "{{ redis_conf_dir }}"
+    state: "directory"
+    owner: "{{ redis_user }}"
+    group: "{{ redis_group }}"
+    mode: 0770
+  become: true
+
+- name: ensure redis directory
+  file:
+    name: "{{ redis_dir }}"
+    state: "directory"
+    owner: "{{ redis_user }}"
+    group: "{{ redis_group }}"
+    mode: 0770
+  become: true

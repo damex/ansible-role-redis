@@ -2,3 +2,4 @@
 
 daemonize {{ 'yes' if redis_daemonize else 'no' }}
 pidfile {{ redis_pidfile }}
+dir {{ redis_dir }}

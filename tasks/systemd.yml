@@ -4,4 +4,4 @@
     name: "damex.systemd_service"
   vars:
     systemd_service_name: "{{ redis_service_name }}"
-    systemd_service_restart_on: "redis_conf_file_state.changed"
+    systemd_service_restart_on: "{{ redis_conf_file_state.changed }}"
